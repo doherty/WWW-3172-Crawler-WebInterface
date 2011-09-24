@@ -25,3 +25,13 @@ show_errors: 1
 # DO NOT EVER USE THAT FEATURE IN PRODUCTION 
 # OR TINY KITTENS SHALL DIE WITH LOTS OF SUFFERING
 auto_reload: 0
+
+plugins:
+    DataFu:
+        form:
+            profiles: profiles
+template: template_toolkit
+engines:
+    template_toolkit:
+        start_tag: '<%'
+        end_tag: '%>'

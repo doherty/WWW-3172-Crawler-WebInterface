@@ -63,12 +63,23 @@
 
       <div id="content">
         <div id="header">
-          <h1>Begin crawling</h1>
-          <h2>By <a href="http://hashbang.ca">Mike Doherty</a></h2>
+          <h1>Results</h1>
+          <h2>&lt;&nbsp;<a href="..">Back</a></h2>
         </div>
 
-        <div id="crawl-form">
-            <% form %>
+        <div id="crawl-results">
+            <table>
+            <tr>
+                <td>URL</td>
+                <td>meta keywords</td>
+                <td>meta description</td>
+                <td>size (bytes)</td>
+                <td>speed (s)</td>
+            </tr>
+
+            <% table %>
+
+            </table>
         </div>
       </div>
     </div>

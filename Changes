@@ -1,0 +1,8 @@
+Revision history for Perl module {{$dist->name}}
+
+{{$NEXT}}
+ - First stab at an interface to the crawler
+    - Required stats: meta description and keywords
+    - Extra stats: load time, size
+    - Extra features: Obeys robots.txt, crawls from most linked-to to least
+    - It's pretty!
