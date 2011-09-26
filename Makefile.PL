@@ -17,7 +17,8 @@ my %WriteMakefileArgs = (
     "File::Temp" => 0,
     "Module::Build" => "0.3601",
     "Test::More" => 0,
-    "strict" => 0
+    "strict" => 0,
+    "warnings" => 0
   },
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30",
@@ -32,9 +33,9 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Dancer" => 0,
     "Dancer::Plugin::DataFu" => 0,
+    "Data::Table" => 0,
     "HTML::Entities" => 0,
-    "WWW::3172::Crawler" => 0,
-    "warnings" => 0
+    "WWW::3172::Crawler" => 0
   },
   "VERSION" => "0.001",
   "test" => {

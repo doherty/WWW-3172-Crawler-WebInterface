@@ -3,7 +3,8 @@ use Dancer ':syntax';
 use Dancer::Plugin::DataFu;
 #use Template;
 use WWW::3172::Crawler;
-use HTML::Entities;
+use HTML::Entities qw(encode_entities);
+use Data::Table;
 # ABSTRACT: Provides a web frontend to WWW::3172::Crawler
 # VERSION
 
@@ -18,28 +19,24 @@ post '/submit_crawl' => sub {
             host    => $input->params->{'crawl.url'},
             max     => $input->params->{'crawl.max'},
         );
-        my $data = $crawler->crawl;
-        my $table = '';
-        foreach my $url (keys %$data) {
-            no warnings 'uninitialized';
-            my $safe_url = encode_entities($url);
-            my $keywords = encode_entities($data->{$url}->{keywords});
-            my $description = encode_entities($data->{$url}->{description});
-            my $safe_size   = encode_entities($data->{$url}->{size});
-            my $safe_speed  = encode_entities(sprintf("%.5f", $data->{$url}->{speed}));
-
-            $table .= <<"TABLE";
-<tr>
-    <td><a href="$safe_url">$safe_url</a></td>
-    <td>$keywords</td>
-    <td>$description</td>
-    <td>$safe_size</td>
-    <td>$safe_speed</td>
-</tr>
-TABLE
+        my $crawl_data = $crawler->crawl;
+ 
+        my $headers = ['URL', 'Keywords', 'Description', 'Size (bytes)', 'Speed (s)'];
+        my @rows;
+        while (my ($url, $data) = each %$crawl_data) {
+            delete $crawl_data->{$url};
+            my $data = [
+                "<a href='$url'>" . encode_entities($url) . "</a>",
+                $data->{keywords},
+                $data->{description},
+                $data->{size},
+                sprintf("%.5f", $data->{speed}),
+            ];
+            push @rows, $data;
         }
+        my $table = Data::Table->new(\@rows, $headers, 0);
 
-        return template 'table.tt', { table => $table };
+        return template 'table.tt', { table => $table->html };
     }
     redirect '/';
 };

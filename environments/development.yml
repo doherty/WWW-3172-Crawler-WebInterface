@@ -30,8 +30,3 @@ plugins:
     DataFu:
         form:
             profiles: profiles
-template: template_toolkit
-engines:
-    template_toolkit:
-        start_tag: '<%'
-        end_tag: '%>'

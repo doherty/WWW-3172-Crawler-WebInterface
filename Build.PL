@@ -12,7 +12,8 @@ my %module_build_args = (
     "File::Temp" => 0,
     "Module::Build" => "0.3601",
     "Test::More" => 0,
-    "strict" => 0
+    "strict" => 0,
+    "warnings" => 0
   },
   "configure_requires" => {
     "ExtUtils::MakeMaker" => "6.30",
@@ -31,10 +32,10 @@ my %module_build_args = (
   "requires" => {
     "Dancer" => 0,
     "Dancer::Plugin::DataFu" => 0,
+    "Data::Table" => 0,
     "HTML::Entities" => 0,
     "WWW::3172::Crawler" => 0,
-    "perl" => "5.006",
-    "warnings" => 0
+    "perl" => "5.006"
   },
   "script_files" => [
     "bin/app.pl"
