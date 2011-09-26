@@ -19,3 +19,9 @@ charset: "UTF-8"
 # template_toolkit: TT
 
 template: "simple"
+
+plugins:
+    DataFu:
+        form:
+            profiles: profiles
+            templates: views/datafu
