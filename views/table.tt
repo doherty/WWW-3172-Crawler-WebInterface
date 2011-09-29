@@ -61,7 +61,11 @@
         </div>
 
         <div id="crawl-results">
-            <% table %>
+            <% main_table %>
+        </div>
+        <div id="crawl-stats">
+        <h2>Most popular keywords used:</h2>
+            <% stats_table %>
         </div>
       </div>
     </div>
