@@ -9,6 +9,11 @@ use Data::Table;
 # ABSTRACT: Provides a web frontend to WWW::3172::Crawler
 # VERSION
 
+our $imported_crawler;
+sub import {
+    $imported_crawler = $_[1];
+}
+
 get '/' => sub {
     return template 'index.tt', { form => form->render('crawl', '/submit_crawl', 'crawl.url', 'crawl.max') };
 };
