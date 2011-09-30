@@ -3,7 +3,7 @@ body {
     margin-bottom: 25px;
     padding: 0;
     background-color: #ddd;
-    background-image: url("/images/perldancer-bg.jpg");
+    background-image: url("/~doherty/crawler/images/perldancer-bg.jpg");
     background-repeat: no-repeat;
     background-position: top left;
     font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
@@ -53,7 +53,7 @@ a:hover {
 }
 
 #header {
-    background-image: url("/images/logo-small.png");
+    background-image: url("/~doherty/crawler/images/logo-small.png");
     background-repeat: no-repeat;
     background-position: top left;
     height: 64px;

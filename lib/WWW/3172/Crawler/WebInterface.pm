@@ -1,7 +1,6 @@
 package WWW::3172::Crawler::WebInterface;
 use Dancer ':syntax';
 use Dancer::Plugin::DataFu;
-#use Template;
 use WWW::3172::Crawler;
 use List::UtilsBy qw(nsort_by);
 use HTML::Entities qw(encode_entities);
@@ -15,7 +14,7 @@ sub import {
 }
 
 get '/' => sub {
-    return template 'index.tt', { form => form->render('crawl', '/submit_crawl', 'crawl.url', 'crawl.max') };
+    return template 'index.tt', { form => form->render('crawl', '/~doherty/crawler/submit_crawl', 'crawl.url', 'crawl.max') };
 };
 
 post '/submit_crawl' => sub {
