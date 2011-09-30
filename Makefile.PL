@@ -16,6 +16,7 @@ my %WriteMakefileArgs = (
     "File::Find" => 0,
     "File::Temp" => 0,
     "Module::Build" => "0.3601",
+    "Test::Mock::LWP::Dispatch" => 0,
     "Test::More" => 0,
     "strict" => 0,
     "warnings" => 0
@@ -35,6 +36,7 @@ my %WriteMakefileArgs = (
     "Dancer::Plugin::DataFu" => 0,
     "Data::Table" => 0,
     "HTML::Entities" => 0,
+    "List::UtilsBy" => 0,
     "WWW::3172::Crawler" => 0
   },
   "VERSION" => "0.001",
