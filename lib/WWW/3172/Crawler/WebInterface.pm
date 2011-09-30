@@ -1,4 +1,7 @@
 package WWW::3172::Crawler::WebInterface;
+use strict;
+use warnings;
+
 use Dancer ':syntax';
 use Dancer::Plugin::DataFu;
 use WWW::3172::Crawler;

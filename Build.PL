@@ -12,9 +12,7 @@ my %module_build_args = (
     "File::Temp" => 0,
     "Module::Build" => "0.3601",
     "Test::Mock::LWP::Dispatch" => 0,
-    "Test::More" => 0,
-    "strict" => 0,
-    "warnings" => 0
+    "Test::More" => 0
   },
   "configure_requires" => {
     "ExtUtils::MakeMaker" => "6.30",
@@ -37,7 +35,9 @@ my %module_build_args = (
     "HTML::Entities" => 0,
     "List::UtilsBy" => 0,
     "WWW::3172::Crawler" => 0,
-    "perl" => "5.006"
+    "perl" => "5.006",
+    "strict" => 0,
+    "warnings" => 0
   },
   "script_files" => [
     "bin/app.pl"
